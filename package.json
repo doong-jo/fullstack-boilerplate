@@ -11,9 +11,13 @@
     ]
   },
   "scripts": {
-    "start": "run-p start:server start:client",
+    "start": "run-p start:server start:client db:start",
+    "build": "run-p build:server build:client",
+    "db:start": "mysql.server start",
     "start:server": "yarn workspace server start",
     "start:client": "yarn workspace client start",
+    "build:server": "yarn workspace server build",
+    "build:client": "yarn workspace client build",
     "format": "prettier --write \"**/*.{js,jsx,json,scss,css,md}\""
   },
   "devDependencies": {
